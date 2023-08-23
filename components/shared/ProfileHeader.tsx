@@ -7,6 +7,7 @@ interface Props {
   username: string;
   image: string;
   bio: string;
+  type?: "User" | "Community";
 }
 
 const ProfileHeader = ({
@@ -16,6 +17,7 @@ const ProfileHeader = ({
   username,
   image,
   bio,
+  type,
 }: Props) => {
   return (
     <div className="flex w-full flex-col justify-start">
@@ -31,17 +33,19 @@ const ProfileHeader = ({
           </div>
 
           <div className="flex-1">
-            <h2 className="text-left text-heading3-bold text-light-1">{name}</h2>
+            <h2 className="text-left text-heading3-bold text-light-1">
+              {name}
+            </h2>
             <p className="text-base-medium text-gray-1">@{username}</p>
           </div>
         </div>
       </div>
 
-        {/* TODO: Community */}
+      {/* TODO: Community */}
 
-        <p className="mt-6 max-w-lg text-base-regular text-light-2">{bio}</p>
+      <p className="mt-6 max-w-lg text-base-regular text-light-2">{bio}</p>
 
-        <div className="mt-12 h-0.5 w-full bg-dark-3"/>
+      <div className="mt-12 h-0.5 w-full bg-dark-3" />
     </div>
   );
 };
